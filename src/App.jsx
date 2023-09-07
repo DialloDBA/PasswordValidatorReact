@@ -1,12 +1,14 @@
 import { useState } from 'react'
 import './App.scss'
 
+
 function App() {
+  const [passwordIsVisible,setPasswordIsVisible] = useState(false)
   return (
-    <div className=''>
-      <h1 className=''>Password Validation</h1>
-      <input type="password" name="password" id="" placeholder='Entrer votre mot de passe ' />
-      <button type="button">Afficher/Masquer</button>
+    <>
+      <h1 className=''>Password Validation {passwordIsVisible.toString()} </h1>
+      <input type={passwordIsVisible ? 'text' : 'password'} name="password" id="" placeholder='Entrer votre mot de passe ' />
+      <button type="button" onClick={()=>setPasswordIsVisible((prevState)=>!prevState)}>{passwordIsVisible ? 'Masquer' : 'Afficher'}</button>
       <ul>
         <li>Une Lettre en Minuscule</li>
         <li>Une Lettre en Majuscule</li>
@@ -14,7 +16,7 @@ function App() {
         <li>Un Chiffre </li>
         <li>Minimum 8 Caractères</li>
       </ul>
-    </div>
+    </>
   )
 }
 
