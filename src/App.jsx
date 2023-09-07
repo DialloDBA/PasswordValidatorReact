@@ -11,6 +11,7 @@ function App() {
   const passwordHaslowerCaseLetter = /[a-z]/.test(password)
   const passwordHasUpperCaseLetter = /[A-Z]/.test(password)
   const passwordHasNumber = /[0-9]/.test(password)
+  const passwordHasSpecialCharacter = /[!@#$%^&*()_+{}\[\]:;"<>,.?~\\-]/.test(password)
   return (
     <>
       <h1 className=''>Password Validation {passwordHaslowerCaseLetter.toString()} </h1>
@@ -25,7 +26,7 @@ function App() {
       <ul>
         <li style={{color: passwordHaslowerCaseLetter ? 'green' :'red',fontWeight:passwordHaslowerCaseLetter ? 'bold' :''}}>Une Lettre en Minuscule</li>
         <li style={{color: passwordHasUpperCaseLetter ? 'green' :'red',fontWeight:passwordHasUpperCaseLetter ? 'bold' :''}} >Une Lettre en Majuscule</li>
-        <li>Un Caractère Spéciale </li>
+        <li style={{color: passwordHasSpecialCharacter ? 'green' :'red',fontWeight:passwordHasSpecialCharacter ? 'bold' :''}}>Un Caractère Spéciale </li>
         <li style={{color: passwordHasNumber ? 'green' :'red',fontWeight:passwordHasNumber ? 'bold' :''}}>Un Chiffre </li>
         <li style={{color: passwordHasValidLenght ? 'green' :'red',fontWeight:passwordHasValidLenght ? 'bold' :''}}>Minimum 8 Caractères</li>
       </ul>
