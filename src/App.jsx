@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import './App.scss'
+import open from "./assets/eye-on.svg"
+import closed from "./assets/eye-off.svg"
 
 
 function App() {
@@ -8,7 +10,9 @@ function App() {
     <>
       <h1 className=''>Password Validation {passwordIsVisible.toString()} </h1>
       <input type={passwordIsVisible ? 'text' : 'password'} name="password" id="" placeholder='Entrer votre mot de passe ' />
-      <button type="button" onClick={()=>setPasswordIsVisible((prevState)=>!prevState)}>{passwordIsVisible ? 'Masquer' : 'Afficher'}</button>
+      <span type="button" onClick={()=>setPasswordIsVisible((prevState)=>!prevState)} >
+        <img src={passwordIsVisible ? closed : open } alt={passwordIsVisible ? 'Oeil Fermer' : "Oeil Ouvert" } width={32} />
+        </span>
       <ul>
         <li>Une Lettre en Minuscule</li>
         <li>Une Lettre en Majuscule</li>
