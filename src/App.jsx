@@ -1,11 +1,10 @@
 import { useState } from 'react'
-import styles from './App.module.css'
+import './App.scss'
 
 function App() {
-
   return (
-    <>
-      <h1 className={`${styles.maclasse} ${styles.text}`}>Password Validation</h1>
+    <div className=''>
+      <h1 className=''>Password Validation</h1>
       <input type="password" name="password" id="" placeholder='Entrer votre mot de passe ' />
       <button type="button">Afficher/Masquer</button>
       <ul>
@@ -15,7 +14,7 @@ function App() {
         <li>Un Chiffre </li>
         <li>Minimum 8 Caractères</li>
       </ul>
-    </>
+    </div>
   )
 }
 
