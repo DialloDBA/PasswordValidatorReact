@@ -1,11 +1,11 @@
 import { useState } from 'react'
-import './App.css'
+import styles from './App.module.css'
 
 function App() {
 
   return (
     <>
-      <h1>Password Validation</h1>
+      <h1 className={`${styles.maclasse} ${styles.text}`}>Password Validation</h1>
       <input type="password" name="password" id="" placeholder='Entrer votre mot de passe ' />
       <button type="button">Afficher/Masquer</button>
       <ul>
